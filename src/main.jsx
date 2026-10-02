@@ -1,0 +1,12 @@
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import MainApp from './App';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import '@fontsource/fredoka/400.css';
+import '@fontsource/fredoka/600.css';
+import '@fontsource/fredoka/700.css';
+import '@fontsource/quicksand/500.css';
+import '@fontsource/quicksand/600.css';
+import '@fontsource/quicksand/700.css';
+import './styles.css';
+createRoot(document.getElementById('root')).render(<MainApp />);

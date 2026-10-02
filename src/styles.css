@@ -1,0 +1,108 @@
+@import "tailwindcss";
+@source "./**/*.{js,jsx}";
+      
+      
+      html, body {
+        height: 100%;
+        overflow-x: hidden;
+      }
+      body {
+        font-family: 'Quicksand', sans-serif;
+        user-select: none;
+        transition: background-color 0.4s ease, color 0.4s ease;
+      }
+      .font-display {
+        font-family: 'Fredoka', cursive;
+      }
+      .animate-bounce-subtle {
+        animation: bounceSubtle 2s infinite ease-in-out;
+      }
+      @keyframes bounceSubtle {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-4px); }
+      }
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.05);
+        border-radius: 6px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 6px;
+      }
+      .setup-world { background: radial-gradient(circle at 50% 0%, #fff3c4 0, transparent 48%), linear-gradient(160deg, #b6e9df 0%, #e7f6d4 52%, #ffe5a7 100%); }
+      .setup-tile { box-shadow: 0 6px 0 rgba(113, 80, 35, .15), 0 12px 22px rgba(62, 91, 68, .13); }
+      .setup-tile:active { transform: translateY(3px); box-shadow: 0 3px 0 rgba(113, 80, 35, .15); }
+      .setup-dialog { box-shadow: 0 24px 70px rgba(13, 35, 41, .35); }
+      .checkout-items { list-style: none; padding: 0; }
+      button:focus-visible, select:focus-visible { outline: 3px solid #0e7490; outline-offset: 2px; }
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+      }
+      @media (max-width: 640px) {
+        .setup-world { padding: 9px; }
+        .home-content { gap: 8px; }
+        .home-art { height: 50px; }
+        .home-hero h2 { margin-top: 3px; font-size: 23px; }
+        .home-hero p { font-size: 11px; }
+        .home-hero .inline-block { padding: 2px 8px; font-size: 9px; }
+        .home-grid { gap: 7px; }
+        .home-tile { min-height: 112px; padding: 8px; border-radius: 13px; }
+        .home-tile > span:first-child { font-size: 25px; }
+        .home-tile .font-display { font-size: 12px; }
+        .home-tile span span:first-child { font-size: 9px; }
+        .home-tile span span:last-child { font-size: 10px; margin-top: 2px; }
+        .home-start { padding-top: 9px; padding-bottom: 9px; font-size: 15px; }
+        .game-shell { height: 100dvh; max-height: 100dvh; }
+        .game-header { padding: 5px 10px; }
+        .game-header-top { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px; }
+        .game-header-top > div { gap: 4px; }
+        .game-header-top > div:last-child { grid-column: 1 / -1; }
+        .game-nav { margin-top: 4px; padding-top: 4px; }
+        .game-nav-tabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); width: 100%; gap: 4px; }
+        .game-nav-tabs button { min-width: 0; min-height: 36px; padding: 5px 2px; font-size: 10px; line-height: 1.1; justify-content: center; }
+        .game-nav-tabs button i { display: none; }
+        .game-stalls { display: none !important; }
+        .game-main { padding: 6px 8px; min-height: 0; }
+        .game-story { gap: 6px; }
+        .game-steps { gap: 4px; }
+        .game-steps button { min-width: 0; min-height: 36px; padding: 5px 3px; border-radius: 12px; font-size: 10px; line-height: 1.1; gap: 3px; }
+        .game-steps button span:first-child { flex: none; width: 16px; height: 16px; }
+        .game-panel { min-height: 0; padding: 12px; border-radius: 18px; }
+        .game-panel .space-y-4 > :not([hidden]) ~ :not([hidden]) { margin-top: 10px; }
+        .game-panel .space-y-3 > :not([hidden]) ~ :not([hidden]) { margin-top: 8px; }
+        .story-scene { min-height: 40px; padding: 3px; gap: 5px; font-size: 10px; }
+        .story-scene .text-3xl, .story-scene .text-2xl { font-size: 18px; }
+        .game-shelf { padding: 7px; gap: 5px; }
+        .shelves-title-full { display: none; }
+        .game-shelves-question { max-width: 58%; font-size: 11px; line-height: 1.2; padding: 5px 7px; }
+        .game-product { padding: 6px; gap: 5px; border-radius: 12px; }
+        .game-product > div:first-child { font-size: 24px; }
+        .game-tray { padding: 7px; }
+        .game-tray .grid { gap: 4px; }
+        .game-tray .grid > div { height: 25px; border-radius: 8px; }
+        .game-basket { padding: 8px; }
+        .game-payment .game-question { max-width: 62%; padding: 5px 7px; font-size: 10px; line-height: 1.2; }
+        .game-payment .game-summary { padding: 7px; }
+        .checkout-items { gap: 5px; }
+        .checkout-item { width: 35px; height: 35px; font-size: 21px; }
+        .game-payment .game-keypad { padding: 9px; }
+        .game-payment .game-keypad .space-y-3 > :not([hidden]) ~ :not([hidden]) { margin-top: 6px; }
+        .game-payment .game-keypad .min-h-\[60px\] { min-height: 42px; padding: 5px 8px; font-size: 24px; }
+        .game-payment .game-keypad button { padding: 5px; min-height: 36px; }
+        .game-payment .game-keypad .gap-4 { gap: 7px; }
+        .game-payment-title-full { display: none; }
+        .game-actions { padding-top: 7px; margin-top: 7px; }
+        .game-actions button { min-height: 42px; padding-top: 7px; padding-bottom: 7px; }
+        .game-footer { display: none; }
+      }
+      @media (min-width: 641px) {
+        .game-payment-title-mobile { display: none; }
+        .shelves-title-mobile { display: none; }
+      }
+      @media (max-width: 400px) {
+        .game-header h1 > span { display: none; }
+      }
