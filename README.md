@@ -2,6 +2,8 @@
 
 A local, bilingual shopkeeping math game for Key Stages 1 and 2. The game supports English and Spanish; the language choice and player progress are saved in the browser. It uses local, bundled fonts, icons, and illustrations.
 
+Play online: <https://mathmarket.atollingo.com/>
+
 ## Run locally
 
 ```powershell
@@ -27,3 +29,15 @@ Open <http://127.0.0.1:4180/>. For live editing, use `npm run dev` and open <htt
 `npm test` checks generated bilingual prompts across every track, level, and stall. `npm run build` creates the deployable `dist/` directory. No browser-side JSX transformation or CDN scripts are used.
 
 Progress is stored in this browser's localStorage. Changing language keeps the active choices and progress.
+
+## Deploy to Cloudflare Pages
+
+The production site is a Cloudflare Pages project named `math-market-atollingo`. After pushing changes to GitHub, publish a new build with:
+
+```powershell
+npm ci
+npm run build
+wrangler pages deploy dist --project-name math-market-atollingo --branch main
+```
+
+This Pages project uses direct uploads. A GitHub push alone does not update the live site.
